@@ -111,3 +111,22 @@
       [:span "{{" (str/replace content block-uid "invalid") "}}"])))
 
 
+(defn select-options
+  "Creates a seq of option tags from a collection."
+  ([coll] (select-options coll nil))
+  ([coll selected]
+    (for [x coll]
+      (if (sequential? x)
+        (let [[text val] x]
+          (if (sequential? val)
+            [:optgroup {:label text} (select-options val selected)]
+            [:option {:value val :selected (= val selected)} text]))
+        [:option {:selected (= x selected)} x]))))
+
+(defmethod component :dropdown
+  [content _uid]
+  (let [or_options (str/split (subs content 3) #"\|")]
+    (print or_options)
+    [span-click-stop
+    [:select {:on-change "if (this.selectedIndex) doSomething();"} ; {:on-change #(todo-on-click _uid content "{{[[DONE]]}}")}
+     (select-options or_options )] ]))

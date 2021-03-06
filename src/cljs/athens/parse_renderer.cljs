@@ -93,7 +93,8 @@
    #"\[\[youtube\]\]\:.*"         :youtube
    #"iframe\:.*"                  :iframe
    #"SELF"                        :self
-   #"\[\[embed\]\]: \(\(.+\)\)"   :block-embed})
+   #"\[\[embed\]\]: \(\(.+\)\)"   :block-embed
+   #"or\:(.*)"                    :dropdown})
 
 
 (defmulti component

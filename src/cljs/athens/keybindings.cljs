@@ -89,7 +89,8 @@
    ["Yesterday"     mui-icons/Today (fn [] (str "[[" (:title (get-day 1)) "]]")) nil nil]
    ["YouTube Embed" mui-icons/YouTube "{{[[youtube]]: }}" nil 2]
    ["iframe Embed"  mui-icons/DesktopWindows "{{iframe: }}" nil 2]
-   ["Block Embed"   mui-icons/ViewDayRounded "{{[[embed]]: (())}}" nil 4]])
+   ["Block Embed"   mui-icons/ViewDayRounded "{{[[embed]]: (())}}" nil 4]
+   ["Dropdown"      mui-icons/ArrowDropDownCircleOutlined "{{or: }}" nil 2]])
 
 ;;[mui-icons/ "Block Embed" #(str "[[" (:title (get-day 1)) "]]")]
 ;;[mui-icons/DateRange "Date Picker"]
